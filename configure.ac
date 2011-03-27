@@ -2376,7 +2376,7 @@ AC_CHECK_FUNCS(clock_gettime, [], [
     AC_DEFINE(HAVE_CLOCK_GETTIME, 1)
     G_THREAD_LIBS="$G_THREAD_LIBS -lrt"
     G_THREAD_LIBS_FOR_GTHREAD="$G_THREAD_LIBS_FOR_GTHREAD -lrt"
-    GLIB_RT_LIBS="-lrt"
+    GLIB_RT_LIBS="-lrt -lpthread"
   ])
 ])
 AC_SUBST(GLIB_RT_LIBS)
