@@ -97,6 +97,7 @@ static gboolean posix_check_cmd_prio_warned = FALSE;
 # error This should not happen. Contact the GLib team.
 #endif
 
+#ifndef __native_client__
 #if defined (POSIX_MIN_PRIORITY) && defined (POSIX_MAX_PRIORITY)
 # define HAVE_PRIORITIES 1
 static gint priority_normal_value;
@@ -114,6 +115,7 @@ static gint priority_normal_value;
 # endif /* !__FreeBSD__ */
 # define PRIORITY_NORMAL_VALUE    priority_normal_value
 #endif /* POSIX_MIN_PRIORITY && POSIX_MAX_PRIORITY */
+#endif /* __native_client__ */
 
 static gulong g_thread_min_stack_size = 0;
 
