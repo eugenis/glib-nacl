@@ -2,8 +2,8 @@
 ROOT=${NACL_TOOLCHAIN_ROOT:-$HOME/root/nacl-sdk}
 
 cp nacl.cache nacl.cache.tmp
-PATH=$ROOT/bin:$PATH CC=nacl64-gcc AR=nacl64-ar RANLIB=nacl64-ranlib PKG_CONFIG_LIBDIR=$ROOT/nacl64/usr/lib/pkgconfig \
-  ./configure --host=nacl64 --prefix=$ROOT/nacl64/usr --cache-file=nacl.cache.tmp
-PATH=$ROOT/bin:$PATH make
+PATH=$ROOT/bin:$PATH CC=x86_64-nacl-gcc AR=x86_64-nacl-ar RANLIB=x86_64-nacl-ranlib PKG_CONFIG_LIBDIR=$ROOT/x86_64-nacl/usr/lib/pkgconfig \
+  ./configure --host=x86_64-nacl --prefix=$ROOT/x86_64-nacl/usr --cache-file=nacl.cache.tmp
+PATH=$ROOT/bin:$PATH make -j15
 PATH=$ROOT/bin:$PATH make install
 
